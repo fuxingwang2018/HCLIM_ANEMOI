@@ -1,0 +1,427 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Sun Oct 19 11:48:35 2025 (1760874515.7747855) on ac6-102.bullx:/lus/h2resw01/scratch/swe0632/Proj_anemoi
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /lus/h2resw01/scratch/swe0632/Proj_anemoi/slurm_aifs_ens_1000.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --qos=ng
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=1
+[ECMWF-INFO -sbatch] - #SBATCH --gpus-per-node=1
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=32
+[ECMWF-INFO -sbatch] - #SBATCH --mem=80G
+[ECMWF-INFO -sbatch] - #SBATCH --time=10:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=inference-dana_2_step_aifs_ens
+[ECMWF-INFO -sbatch] - #SBATCH --output=testRunner4.out
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['slurm_aifs_ens_1000.sh']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=32
+[ECMWF-INFO -sbatch] - ARG --job_name=inference-dana_2_step_aifs_ens
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=1
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=testRunner4.out
+[ECMWF-INFO -sbatch] - ARG --qos=ng
+[ECMWF-INFO -sbatch] - ARG --time=10:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=80G
+[ECMWF-INFO -sbatch] - ARG --gpus_per_node=1
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: swe0632-inference-_p_aifs_ens-1x32-/lus/h2resw01/scratch/swe0632/Proj_anemoi/testRunner4.out
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=32', '--job-name=inference-dana_2_step_aifs_ens', '--ntasks-per-node=1', '--nodes=1', '--output=testRunner4.out', '--qos=ng', '--time=10:00:00', '--mem=80G', '--gpus-per-node=1', '--licenses=h2resw01', '--export=EC_user_time_limit=10:00:00', '/lus/h2resw01/scratch/swe0632/Proj_anemoi/slurm_aifs_ens_1000.sh']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 31362505
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac6-316 at 20251019_114840.511, PID: 682027, JOBID: 31362505
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/swe0632
+[ECMWF-INFO -ecprofile] $PERM=/perm/swe0632
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/swe0632
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.swe0632.31362505
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/swe0632/1/31362505
+
+Lmod is automatically replacing "prgenv/gnu" with "conda/24.11.3-2".
+
+-------------------------------------------------------------------------------
+There are messages associated with the following module(s):
+-------------------------------------------------------------------------------
+
+conda/24.11.3-2:
+   Using conda effectively disables any other loaded modules. Use "module
+   reset" to return to the default environment.
+
+-------------------------------------------------------------------------------
+
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-19 11:48:54 INFO Pre processors: []
+2025-10-19 11:48:54 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-19 11:48:54 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-19 11:48:54 INFO Using DefaultRunner runner, device=cuda
+2025-10-19 11:48:55 INFO Input: GribFileInput()
+2025-10-19 11:48:55 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output/output_ens_reg_emi_2015-48h_ens-member_1.grib)
+2025-10-19 11:48:56 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-19 11:48:56 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-19 11:48:56 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-19 11:48:57 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-19 11:48:57 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:48:57 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:48:57 INFO --------------------------------------------------------------------------------
+2025-10-19 11:48:57 INFO Input state:
+2025-10-19 11:48:57 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-19 11:48:57 INFO Constant forcings inputs:
+2025-10-19 11:48:57 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:48:57 INFO Dynamic forcings inputs:
+2025-10-19 11:48:57 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:48:57 INFO Boundary forcings inputs:
+2025-10-19 11:48:57 INFO --------------------------------------------------------------------------------
+2025-10-19 11:48:57 INFO --------------------------------------------------------------------------------
+2025-10-19 11:48:57 INFO Initial forcings:
+2025-10-19 11:48:57 INFO   Constant forcings inputs:
+2025-10-19 11:48:57 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:48:57 INFO   Dynamic forcings inputs:
+2025-10-19 11:48:57 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:48:57 INFO --------------------------------------------------------------------------------
+2025-10-19 11:48:57 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:48:57 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:48:58 INFO Expected shape for each input fields: (2, 542080)
+2025-10-19 11:48:58 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-19 11:49:15 INFO Loading Checkpoint(/perm/esp7856/Modelos/aifs-ens-crps-1.0.ckpt): 17 seconds.
+2025-10-19 11:49:15 INFO Lead time: 2 days, 0:00:00, time stepping: 6:00:00 Forecasting 8 steps
+2025-10-19 11:49:19 INFO Forecasting step 6:00:00 (2023-05-15 06:00:00): 3 seconds.
+2025-10-19 11:49:19 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:42: UserWarning: Using legacy _legacy_data_request, please try to patch your weights.
+  warnings.warn(f"Using legacy {func.__name__}, please try to patch your weights.")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: grid is ambigous: {'N320', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: area is ambigous: {'[89.785, 0.0, -89.785, 359.719]', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+2025-10-19 11:49:21 INFO Forecasting step 12:00:00 (2023-05-15 12:00:00): 0.5 seconds.
+2025-10-19 11:49:21 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:22 INFO Forecasting step 18:00:00 (2023-05-15 18:00:00): 85.6 milliseconds.
+2025-10-19 11:49:23 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:24 INFO Forecasting step 1 day, 0:00:00 (2023-05-16 00:00:00): 85.5 milliseconds.
+2025-10-19 11:49:25 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:26 INFO Forecasting step 1 day, 6:00:00 (2023-05-16 06:00:00): 85.5 milliseconds.
+2025-10-19 11:49:26 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:27 INFO Forecasting step 1 day, 12:00:00 (2023-05-16 12:00:00): 85.5 milliseconds.
+2025-10-19 11:49:28 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:29 INFO Forecasting step 1 day, 18:00:00 (2023-05-16 18:00:00): 85.5 milliseconds.
+2025-10-19 11:49:29 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:30 INFO Forecasting step 2 days, 0:00:00 (2023-05-17 00:00:00): 85.5 milliseconds.
+2025-10-19 11:49:31 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-19 11:49:36 INFO Pre processors: []
+2025-10-19 11:49:36 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-19 11:49:36 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-19 11:49:36 INFO Using DefaultRunner runner, device=cuda
+2025-10-19 11:49:36 INFO Input: GribFileInput()
+2025-10-19 11:49:36 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output/output_ens_reg_emi_2015-48h_ens-member_2.grib)
+2025-10-19 11:49:36 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-19 11:49:36 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-19 11:49:36 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-19 11:49:37 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-19 11:49:37 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:49:37 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:49:37 INFO --------------------------------------------------------------------------------
+2025-10-19 11:49:37 INFO Input state:
+2025-10-19 11:49:37 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-19 11:49:37 INFO Constant forcings inputs:
+2025-10-19 11:49:37 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:49:37 INFO Dynamic forcings inputs:
+2025-10-19 11:49:37 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:49:37 INFO Boundary forcings inputs:
+2025-10-19 11:49:37 INFO --------------------------------------------------------------------------------
+2025-10-19 11:49:37 INFO --------------------------------------------------------------------------------
+2025-10-19 11:49:37 INFO Initial forcings:
+2025-10-19 11:49:37 INFO   Constant forcings inputs:
+2025-10-19 11:49:37 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:49:37 INFO   Dynamic forcings inputs:
+2025-10-19 11:49:37 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:49:37 INFO --------------------------------------------------------------------------------
+2025-10-19 11:49:37 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:49:37 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:49:38 INFO Expected shape for each input fields: (2, 542080)
+2025-10-19 11:49:38 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-19 11:49:44 INFO Loading Checkpoint(/perm/esp7856/Modelos/aifs-ens-crps-1.0.ckpt): 6 seconds.
+2025-10-19 11:49:44 INFO Lead time: 2 days, 0:00:00, time stepping: 6:00:00 Forecasting 8 steps
+2025-10-19 11:49:46 INFO Forecasting step 6:00:00 (2023-05-15 06:00:00): 1 second.
+2025-10-19 11:49:46 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:42: UserWarning: Using legacy _legacy_data_request, please try to patch your weights.
+  warnings.warn(f"Using legacy {func.__name__}, please try to patch your weights.")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: grid is ambigous: {'N320', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: area is ambigous: {'[89.785, 0.0, -89.785, 359.719]', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+2025-10-19 11:49:47 INFO Forecasting step 12:00:00 (2023-05-15 12:00:00): 0.5 seconds.
+2025-10-19 11:49:48 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:49 INFO Forecasting step 18:00:00 (2023-05-15 18:00:00): 85.6 milliseconds.
+2025-10-19 11:49:49 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:50 INFO Forecasting step 1 day, 0:00:00 (2023-05-16 00:00:00): 85.4 milliseconds.
+2025-10-19 11:49:51 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:52 INFO Forecasting step 1 day, 6:00:00 (2023-05-16 06:00:00): 85.6 milliseconds.
+2025-10-19 11:49:53 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:54 INFO Forecasting step 1 day, 12:00:00 (2023-05-16 12:00:00): 85.8 milliseconds.
+2025-10-19 11:49:54 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:55 INFO Forecasting step 1 day, 18:00:00 (2023-05-16 18:00:00): 85.5 milliseconds.
+2025-10-19 11:49:56 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:49:57 INFO Forecasting step 2 days, 0:00:00 (2023-05-17 00:00:00): 85.8 milliseconds.
+2025-10-19 11:49:58 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-19 11:50:02 INFO Pre processors: []
+2025-10-19 11:50:02 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-19 11:50:02 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-19 11:50:02 INFO Using DefaultRunner runner, device=cuda
+2025-10-19 11:50:02 INFO Input: GribFileInput()
+2025-10-19 11:50:02 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output/output_ens_reg_emi_2015-48h_ens-member_3.grib)
+2025-10-19 11:50:02 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-19 11:50:02 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-19 11:50:03 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-19 11:50:04 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-19 11:50:04 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:04 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:04 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:04 INFO Input state:
+2025-10-19 11:50:04 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-19 11:50:04 INFO Constant forcings inputs:
+2025-10-19 11:50:04 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:04 INFO Dynamic forcings inputs:
+2025-10-19 11:50:04 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:04 INFO Boundary forcings inputs:
+2025-10-19 11:50:04 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:04 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:04 INFO Initial forcings:
+2025-10-19 11:50:04 INFO   Constant forcings inputs:
+2025-10-19 11:50:04 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:04 INFO   Dynamic forcings inputs:
+2025-10-19 11:50:04 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:04 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:04 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:50:04 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:50:04 INFO Expected shape for each input fields: (2, 542080)
+2025-10-19 11:50:04 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-19 11:50:10 INFO Loading Checkpoint(/perm/esp7856/Modelos/aifs-ens-crps-1.0.ckpt): 6 seconds.
+2025-10-19 11:50:11 INFO Lead time: 2 days, 0:00:00, time stepping: 6:00:00 Forecasting 8 steps
+2025-10-19 11:50:12 INFO Forecasting step 6:00:00 (2023-05-15 06:00:00): 1 second.
+2025-10-19 11:50:12 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:42: UserWarning: Using legacy _legacy_data_request, please try to patch your weights.
+  warnings.warn(f"Using legacy {func.__name__}, please try to patch your weights.")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: grid is ambigous: {'N320', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: area is ambigous: {'None', '[89.785, 0.0, -89.785, 359.719]'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+2025-10-19 11:50:14 INFO Forecasting step 12:00:00 (2023-05-15 12:00:00): 0.5 seconds.
+2025-10-19 11:50:14 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:15 INFO Forecasting step 18:00:00 (2023-05-15 18:00:00): 85.6 milliseconds.
+2025-10-19 11:50:15 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:16 INFO Forecasting step 1 day, 0:00:00 (2023-05-16 00:00:00): 85.5 milliseconds.
+2025-10-19 11:50:17 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:18 INFO Forecasting step 1 day, 6:00:00 (2023-05-16 06:00:00): 85.5 milliseconds.
+2025-10-19 11:50:19 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:20 INFO Forecasting step 1 day, 12:00:00 (2023-05-16 12:00:00): 85.5 milliseconds.
+2025-10-19 11:50:20 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:21 INFO Forecasting step 1 day, 18:00:00 (2023-05-16 18:00:00): 85.5 milliseconds.
+2025-10-19 11:50:22 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:23 INFO Forecasting step 2 days, 0:00:00 (2023-05-17 00:00:00): 85.5 milliseconds.
+2025-10-19 11:50:24 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-19 11:50:28 INFO Pre processors: []
+2025-10-19 11:50:28 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-19 11:50:28 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-19 11:50:28 INFO Using DefaultRunner runner, device=cuda
+2025-10-19 11:50:28 INFO Input: GribFileInput()
+2025-10-19 11:50:28 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output/output_ens_reg_emi_2015-48h_ens-member_4.grib)
+2025-10-19 11:50:28 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-19 11:50:28 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-19 11:50:29 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-19 11:50:30 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-19 11:50:30 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:30 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:30 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:30 INFO Input state:
+2025-10-19 11:50:30 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-19 11:50:30 INFO Constant forcings inputs:
+2025-10-19 11:50:30 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:30 INFO Dynamic forcings inputs:
+2025-10-19 11:50:30 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:30 INFO Boundary forcings inputs:
+2025-10-19 11:50:30 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:30 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:30 INFO Initial forcings:
+2025-10-19 11:50:30 INFO   Constant forcings inputs:
+2025-10-19 11:50:30 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:30 INFO   Dynamic forcings inputs:
+2025-10-19 11:50:30 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:30 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:30 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:50:30 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:50:30 INFO Expected shape for each input fields: (2, 542080)
+2025-10-19 11:50:30 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-19 11:50:37 INFO Loading Checkpoint(/perm/esp7856/Modelos/aifs-ens-crps-1.0.ckpt): 6 seconds.
+2025-10-19 11:50:37 INFO Lead time: 2 days, 0:00:00, time stepping: 6:00:00 Forecasting 8 steps
+2025-10-19 11:50:38 INFO Forecasting step 6:00:00 (2023-05-15 06:00:00): 1 second.
+2025-10-19 11:50:38 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:42: UserWarning: Using legacy _legacy_data_request, please try to patch your weights.
+  warnings.warn(f"Using legacy {func.__name__}, please try to patch your weights.")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: grid is ambigous: {'N320', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: area is ambigous: {'[89.785, 0.0, -89.785, 359.719]', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+2025-10-19 11:50:40 INFO Forecasting step 12:00:00 (2023-05-15 12:00:00): 0.5 seconds.
+2025-10-19 11:50:40 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:41 INFO Forecasting step 18:00:00 (2023-05-15 18:00:00): 85.6 milliseconds.
+2025-10-19 11:50:42 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:43 INFO Forecasting step 1 day, 0:00:00 (2023-05-16 00:00:00): 85.5 milliseconds.
+2025-10-19 11:50:43 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:44 INFO Forecasting step 1 day, 6:00:00 (2023-05-16 06:00:00): 85.4 milliseconds.
+2025-10-19 11:50:45 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:46 INFO Forecasting step 1 day, 12:00:00 (2023-05-16 12:00:00): 85.4 milliseconds.
+2025-10-19 11:50:47 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:48 INFO Forecasting step 1 day, 18:00:00 (2023-05-16 18:00:00): 85.4 milliseconds.
+2025-10-19 11:50:48 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:50:49 INFO Forecasting step 2 days, 0:00:00 (2023-05-17 00:00:00): 85.4 milliseconds.
+2025-10-19 11:50:50 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-19 11:50:54 INFO Pre processors: []
+2025-10-19 11:50:54 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-19 11:50:54 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-19 11:50:54 INFO Using DefaultRunner runner, device=cuda
+2025-10-19 11:50:54 INFO Input: GribFileInput()
+2025-10-19 11:50:54 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output/output_ens_reg_emi_2015-48h_ens-member_5.grib)
+2025-10-19 11:50:55 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-19 11:50:55 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-19 11:50:55 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-19 11:50:56 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-19 11:50:56 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:56 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:56 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:56 INFO Input state:
+2025-10-19 11:50:56 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-19 11:50:56 INFO Constant forcings inputs:
+2025-10-19 11:50:56 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:56 INFO Dynamic forcings inputs:
+2025-10-19 11:50:56 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:56 INFO Boundary forcings inputs:
+2025-10-19 11:50:56 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:56 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:56 INFO Initial forcings:
+2025-10-19 11:50:56 INFO   Constant forcings inputs:
+2025-10-19 11:50:56 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-19 11:50:56 INFO   Dynamic forcings inputs:
+2025-10-19 11:50:56 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-19 11:50:56 INFO --------------------------------------------------------------------------------
+2025-10-19 11:50:56 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:50:56 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-19 11:50:56 INFO Expected shape for each input fields: (2, 542080)
+2025-10-19 11:50:56 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-19 11:51:03 INFO Loading Checkpoint(/perm/esp7856/Modelos/aifs-ens-crps-1.0.ckpt): 6 seconds.
+2025-10-19 11:51:03 INFO Lead time: 2 days, 0:00:00, time stepping: 6:00:00 Forecasting 8 steps
+2025-10-19 11:51:04 INFO Forecasting step 6:00:00 (2023-05-15 06:00:00): 1 second.
+2025-10-19 11:51:04 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/metadata.py:441: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:42: UserWarning: Using legacy _legacy_data_request, please try to patch your weights.
+  warnings.warn(f"Using legacy {func.__name__}, please try to patch your weights.")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: grid is ambigous: {'N320', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+/perm/esp7856/conda/envs/anemoi_ens/lib/python3.11/site-packages/anemoi/inference/legacy.py:216: UserWarning: area is ambigous: {'[89.785, 0.0, -89.785, 359.719]', 'None'}
+  warnings.warn(f"{c} is ambigous: {checks[c]}")
+2025-10-19 11:51:06 INFO Forecasting step 12:00:00 (2023-05-15 12:00:00): 0.5 seconds.
+2025-10-19 11:51:06 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:51:07 INFO Forecasting step 18:00:00 (2023-05-15 18:00:00): 85.5 milliseconds.
+2025-10-19 11:51:08 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:51:09 INFO Forecasting step 1 day, 0:00:00 (2023-05-16 00:00:00): 85.6 milliseconds.
+2025-10-19 11:51:10 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:51:11 INFO Forecasting step 1 day, 6:00:00 (2023-05-16 06:00:00): 85.5 milliseconds.
+2025-10-19 11:51:11 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:51:12 INFO Forecasting step 1 day, 12:00:00 (2023-05-16 12:00:00): 85.7 milliseconds.
+2025-10-19 11:51:13 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:51:14 INFO Forecasting step 1 day, 18:00:00 (2023-05-16 18:00:00): 85.6 milliseconds.
+2025-10-19 11:51:14 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+2025-10-19 11:51:15 INFO Forecasting step 2 days, 0:00:00 (2023-05-17 00:00:00): 85.7 milliseconds.
+2025-10-19 11:51:16 INFO Post processor: Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-19T11:51:18 on ac
+[ECMWF-INFO -ecepilog] JobName                   : inference-dana_2_step_aifs_ens
+[ECMWF-INFO -ecepilog] JobID                     : 31362505
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-19T11:48:35
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-19T11:48:38
+[ECMWF-INFO -ecepilog] End                       : 2025-10-19T11:51:18
+[ECMWF-INFO -ecepilog] QueuedTime                : 3.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 160
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : sesmhi
+[ECMWF-INFO -ecepilog] QOS                       : ng
+[ECMWF-INFO -ecepilog] User                      : swe0632
+[ECMWF-INFO -ecepilog] StdOut                    : /lus/h2resw01/scratch/swe0632/Proj_anemoi/testRunner4.out
+[ECMWF-INFO -ecepilog] StdErr                    : /lus/h2resw01/scratch/swe0632/Proj_anemoi/testRunner4.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 32
+[ECMWF-INFO -ecepilog] SBU                       : 12.134
+[ECMWF-INFO -ecepilog] jobtag                    : swe0632-inference-_p_aifs_ens-1x32-/lus/h2resw01/scratch/swe0632/Proj_anemoi/testRunner4.out
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+
