@@ -12,14 +12,8 @@ module load conda
 ```
 
 ### 2. Create a Conda Environment
-
-#### Option 1: Using the environment file (⚠️ may fail due to pip–conda conflicts)
-```bash
-conda env create -f environment.yml -n env_test_anemoi
-```
-
-#### Option 2: Manual installation (recommended)
-If the above fails or you encounter disk quota issues, install packages manually:
+As the environment is built with a mixture of conda and pip, installation of the environment needs to be done mannually on ATOS.
+We are currently investigating if there is any preinstalled package on ATOS that can be used.
 
 ```bash
 # Create and activate environment
@@ -35,11 +29,7 @@ pip install anemoi-datasets==0.5.23
 pip install "earthkit-regrid==0.4.0" "ecmwf-opendata>=0.3.19"
 pip install flash_attn
 ```
-
-Once everything is installed, test the setup by submitting a test job:
-```bash
-sbatch slurm_aifs_ens_1000.sh
-```
+* The right cuda version needs to be installed during the process.
 
 ---
 
@@ -97,7 +87,7 @@ sbatch slurm_aifs_ens_1000.sh
 - **AIFS ENS v1 Description:**  
   [https://confluence.ecmwf.int/display/FCST/Implementation+of+AIFS+ENS+v1](https://confluence.ecmwf.int/display/FCST/Implementation+of+AIFS+ENS+v1)
 
-- **Anemoi Inference Configuration Guide:**  
+- **Anemoi Inference Configuration Guide: top-level configuration**  
   [https://anemoi.readthedocs.io/projects/inference/en/latest/inference/configs/top-level.html](https://anemoi.readthedocs.io/projects/inference/en/latest/inference/configs/top-level.html)
 
 ---
