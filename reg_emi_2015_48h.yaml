@@ -1,0 +1,6 @@
+checkpoint: /perm/swe0632/PROJ_anemoi_oct2025/Model_cktpt/aifs-ens-crps-1.0.ckpt
+lead_time: 48 
+input:
+  grib: /perm/swe0632/PROJ_anemoi_oct2025/input/aifs_input_state_20230514_n320_18z_20230515_00z.grib
+output:
+   grib: /ec/res4/scratch/swe0632/Proj_anemoi/output_ens_dana_italy.grib

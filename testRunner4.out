@@ -1,0 +1,547 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Wed Oct 22 09:54:59 2025 (1761126899.0980392) on ac6-100.bullx:/etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025/slurm_aifs_ens_1000_envtest.sh
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --qos=ng
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=1
+[ECMWF-INFO -sbatch] - #SBATCH --gpus-per-node=1
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=32
+[ECMWF-INFO -sbatch] - #SBATCH --mem=80G
+[ECMWF-INFO -sbatch] - #SBATCH --time=10:00:00
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=inference-dana_2_step_aifs_ens
+[ECMWF-INFO -sbatch] - #SBATCH --output=testRunner4.out
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['slurm_aifs_ens_1000_envtest.sh']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=32
+[ECMWF-INFO -sbatch] - ARG --job_name=inference-dana_2_step_aifs_ens
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=1
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=testRunner4.out
+[ECMWF-INFO -sbatch] - ARG --qos=ng
+[ECMWF-INFO -sbatch] - ARG --time=10:00:00
+[ECMWF-INFO -sbatch] - ARG --mem=80G
+[ECMWF-INFO -sbatch] - ARG --gpus_per_node=1
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: swe0632-inference-_p_aifs_ens-1x32-/etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025/testRunner4.out
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 0 with a Standard Deviation 0
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] - 
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=32', '--job-name=inference-dana_2_step_aifs_ens', '--ntasks-per-node=1', '--nodes=1', '--output=testRunner4.out', '--qos=ng', '--time=10:00:00', '--mem=80G', '--gpus-per-node=1', '--licenses=h2resw01', '--export=EC_user_time_limit=10:00:00', '/etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025/slurm_aifs_ens_1000_envtest.sh']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 32581399
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac6-326 at 20251022_095518.191, PID: 3143676, JOBID: 32581399
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/swe0632
+[ECMWF-INFO -ecprofile] $PERM=/perm/swe0632
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/swe0632
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.swe0632.32581399
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/swe0632/7/32581399
+
+Lmod is automatically replacing "prgenv/gnu" with "conda/24.11.3-2".
+
+-------------------------------------------------------------------------------
+There are messages associated with the following module(s):
+-------------------------------------------------------------------------------
+
+conda/24.11.3-2:
+   Using conda effectively disables any other loaded modules. Use "module
+   reset" to return to the default environment.
+
+-------------------------------------------------------------------------------
+
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-22 09:55:25 INFO Pre processors: []
+2025-10-22 09:55:25 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-22 09:55:25 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-22 09:55:25 INFO Using DefaultRunner runner, device=cuda
+2025-10-22 09:55:25 INFO Input: GribFileInput()
+2025-10-22 09:55:25 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output_envtest//output_ens_reg_emi_2015-48h_ens-member_1.grib)
+2025-10-22 09:55:32 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-22 09:55:32 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/metadata.py:439: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-22 09:55:32 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-22 09:55:33 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-22 09:55:33 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:55:33 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:55:33 INFO --------------------------------------------------------------------------------
+2025-10-22 09:55:33 INFO Input state:
+2025-10-22 09:55:33 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-22 09:55:33 INFO Constant forcings inputs:
+2025-10-22 09:55:33 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:55:33 INFO Dynamic forcings inputs:
+2025-10-22 09:55:33 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:55:33 INFO Boundary forcings inputs:
+2025-10-22 09:55:33 INFO --------------------------------------------------------------------------------
+2025-10-22 09:55:33 INFO --------------------------------------------------------------------------------
+2025-10-22 09:55:33 INFO Initial forcings:
+2025-10-22 09:55:33 INFO   Constant forcings inputs:
+2025-10-22 09:55:33 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:55:33 INFO   Dynamic forcings inputs:
+2025-10-22 09:55:33 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:55:33 INFO --------------------------------------------------------------------------------
+2025-10-22 09:55:33 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:55:33 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:55:34 INFO Expected shape for each input fields: (2, 542080)
+2025-10-22 09:55:34 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-22 09:56:30 INFO Loading Checkpoint(/perm/swe0632/PROJ_anemoi_oct2025/Model_cktpt/aifs-ens-crps-1.0.ckpt): 56 seconds.
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 452, in model
+    model = torch.load(self.checkpoint.path, map_location=self.device, weights_only=False).to(self.device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1837, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by /perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn_2_cuda.cpython-311-x86_64-linux-gnu.so)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/bin/anemoi-inference", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/__main__.py", line 38, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/utils/cli.py", line 266, in cli_main
+    cmd.run(args)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/commands/run.py", line 60, in run
+    runner.execute()
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py", line 114, in execute
+    for state in self.run(input_state=input_state, lead_time=lead_time):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 222, in run
+    yield from self.forecast(lead_time, input_tensor, input_state)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 541, in forecast
+    self.model.eval()
+    ^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 458, in model
+    raise RuntimeError(error_msg) from e
+RuntimeError: Error loading model - Environment validation failed. The following issues were found:
+  mismatch:
+    Version of module anemoi.utils was lower in training than in inference: 0.4.22 <= 0.4.37
+srun: error: ac6-326: task 0: Exited with exit code 1
+srun: Terminating StepId=32581399.0
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-22 09:56:35 INFO Pre processors: []
+2025-10-22 09:56:35 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-22 09:56:35 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-22 09:56:35 INFO Using DefaultRunner runner, device=cuda
+2025-10-22 09:56:35 INFO Input: GribFileInput()
+2025-10-22 09:56:35 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output_envtest//output_ens_reg_emi_2015-48h_ens-member_2.grib)
+2025-10-22 09:56:36 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-22 09:56:36 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/metadata.py:439: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-22 09:56:36 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-22 09:56:37 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-22 09:56:37 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:37 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:37 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:37 INFO Input state:
+2025-10-22 09:56:37 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-22 09:56:37 INFO Constant forcings inputs:
+2025-10-22 09:56:37 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:37 INFO Dynamic forcings inputs:
+2025-10-22 09:56:37 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:37 INFO Boundary forcings inputs:
+2025-10-22 09:56:37 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:37 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:37 INFO Initial forcings:
+2025-10-22 09:56:37 INFO   Constant forcings inputs:
+2025-10-22 09:56:37 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:37 INFO   Dynamic forcings inputs:
+2025-10-22 09:56:37 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:37 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:37 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:56:37 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:56:37 INFO Expected shape for each input fields: (2, 542080)
+2025-10-22 09:56:37 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-22 09:56:41 INFO Loading Checkpoint(/perm/swe0632/PROJ_anemoi_oct2025/Model_cktpt/aifs-ens-crps-1.0.ckpt): 3 seconds.
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 452, in model
+    model = torch.load(self.checkpoint.path, map_location=self.device, weights_only=False).to(self.device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1837, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by /perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn_2_cuda.cpython-311-x86_64-linux-gnu.so)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/bin/anemoi-inference", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/__main__.py", line 38, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/utils/cli.py", line 266, in cli_main
+    cmd.run(args)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/commands/run.py", line 60, in run
+    runner.execute()
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py", line 114, in execute
+    for state in self.run(input_state=input_state, lead_time=lead_time):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 222, in run
+    yield from self.forecast(lead_time, input_tensor, input_state)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 541, in forecast
+    self.model.eval()
+    ^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 458, in model
+    raise RuntimeError(error_msg) from e
+RuntimeError: Error loading model - Environment validation failed. The following issues were found:
+  mismatch:
+    Version of module anemoi.utils was lower in training than in inference: 0.4.22 <= 0.4.37
+srun: error: ac6-326: task 0: Exited with exit code 1
+srun: Terminating StepId=32581399.1
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-22 09:56:45 INFO Pre processors: []
+2025-10-22 09:56:45 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-22 09:56:45 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-22 09:56:45 INFO Using DefaultRunner runner, device=cuda
+2025-10-22 09:56:45 INFO Input: GribFileInput()
+2025-10-22 09:56:45 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output_envtest//output_ens_reg_emi_2015-48h_ens-member_3.grib)
+2025-10-22 09:56:45 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-22 09:56:45 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/metadata.py:439: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-22 09:56:46 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-22 09:56:47 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-22 09:56:47 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:47 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:47 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:47 INFO Input state:
+2025-10-22 09:56:47 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-22 09:56:47 INFO Constant forcings inputs:
+2025-10-22 09:56:47 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:47 INFO Dynamic forcings inputs:
+2025-10-22 09:56:47 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:47 INFO Boundary forcings inputs:
+2025-10-22 09:56:47 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:47 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:47 INFO Initial forcings:
+2025-10-22 09:56:47 INFO   Constant forcings inputs:
+2025-10-22 09:56:47 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:47 INFO   Dynamic forcings inputs:
+2025-10-22 09:56:47 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:47 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:47 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:56:47 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:56:47 INFO Expected shape for each input fields: (2, 542080)
+2025-10-22 09:56:47 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-22 09:56:51 INFO Loading Checkpoint(/perm/swe0632/PROJ_anemoi_oct2025/Model_cktpt/aifs-ens-crps-1.0.ckpt): 3 seconds.
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 452, in model
+    model = torch.load(self.checkpoint.path, map_location=self.device, weights_only=False).to(self.device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1837, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by /perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn_2_cuda.cpython-311-x86_64-linux-gnu.so)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/bin/anemoi-inference", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/__main__.py", line 38, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/utils/cli.py", line 266, in cli_main
+    cmd.run(args)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/commands/run.py", line 60, in run
+    runner.execute()
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py", line 114, in execute
+    for state in self.run(input_state=input_state, lead_time=lead_time):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 222, in run
+    yield from self.forecast(lead_time, input_tensor, input_state)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 541, in forecast
+    self.model.eval()
+    ^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 458, in model
+    raise RuntimeError(error_msg) from e
+RuntimeError: Error loading model - Environment validation failed. The following issues were found:
+  mismatch:
+    Version of module anemoi.utils was lower in training than in inference: 0.4.22 <= 0.4.37
+srun: error: ac6-326: task 0: Exited with exit code 1
+srun: Terminating StepId=32581399.2
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-22 09:56:55 INFO Pre processors: []
+2025-10-22 09:56:55 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-22 09:56:55 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-22 09:56:55 INFO Using DefaultRunner runner, device=cuda
+2025-10-22 09:56:55 INFO Input: GribFileInput()
+2025-10-22 09:56:55 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output_envtest//output_ens_reg_emi_2015-48h_ens-member_4.grib)
+2025-10-22 09:56:55 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-22 09:56:55 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/metadata.py:439: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-22 09:56:56 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-22 09:56:57 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-22 09:56:57 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:57 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:57 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:57 INFO Input state:
+2025-10-22 09:56:57 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-22 09:56:57 INFO Constant forcings inputs:
+2025-10-22 09:56:57 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:57 INFO Dynamic forcings inputs:
+2025-10-22 09:56:57 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:57 INFO Boundary forcings inputs:
+2025-10-22 09:56:57 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:57 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:57 INFO Initial forcings:
+2025-10-22 09:56:57 INFO   Constant forcings inputs:
+2025-10-22 09:56:57 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:56:57 INFO   Dynamic forcings inputs:
+2025-10-22 09:56:57 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:56:57 INFO --------------------------------------------------------------------------------
+2025-10-22 09:56:57 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:56:57 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:56:57 INFO Expected shape for each input fields: (2, 542080)
+2025-10-22 09:56:57 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-22 09:57:01 INFO Loading Checkpoint(/perm/swe0632/PROJ_anemoi_oct2025/Model_cktpt/aifs-ens-crps-1.0.ckpt): 3 seconds.
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 452, in model
+    model = torch.load(self.checkpoint.path, map_location=self.device, weights_only=False).to(self.device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1837, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by /perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn_2_cuda.cpython-311-x86_64-linux-gnu.so)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/bin/anemoi-inference", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/__main__.py", line 38, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/utils/cli.py", line 266, in cli_main
+    cmd.run(args)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/commands/run.py", line 60, in run
+    runner.execute()
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py", line 114, in execute
+    for state in self.run(input_state=input_state, lead_time=lead_time):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 222, in run
+    yield from self.forecast(lead_time, input_tensor, input_state)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 541, in forecast
+    self.model.eval()
+    ^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 458, in model
+    raise RuntimeError(error_msg) from e
+RuntimeError: Error loading model - Environment validation failed. The following issues were found:
+  mismatch:
+    Version of module anemoi.utils was lower in training than in inference: 0.4.22 <= 0.4.37
+srun: error: ac6-326: task 0: Exited with exit code 1
+srun: Terminating StepId=32581399.3
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py:283: UserWarning: 
+                No post_processors defined. Accumulations will be accumulated from the beginning of the forecast.
+
+                🚧🚧🚧 In a future release, the default will be to NOT accumulate from the beginning of the forecast. 🚧🚧🚧
+                Update your config if you wish to keep accumulating from the beginning.
+                https://github.com/ecmwf/anemoi-inference/issues/131
+                
+  warnings.warn(
+2025-10-22 09:57:05 INFO Pre processors: []
+2025-10-22 09:57:05 INFO Accumulating fields ['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro']
+2025-10-22 09:57:05 INFO Post processors: [Accumulate(['cp', 'tp', 'ssrd', 'strd', 'sf', 'ro'])]
+2025-10-22 09:57:05 INFO Using DefaultRunner runner, device=cuda
+2025-10-22 09:57:05 INFO Input: GribFileInput()
+2025-10-22 09:57:05 INFO Output: GribFileOutput(/ec/res4/scratch/swe0632/Proj_anemoi/output_envtest//output_ens_reg_emi_2015-48h_ens-member_5.grib)
+2025-10-22 09:57:05 INFO GribFileInput: `date` not provided, using the most recent date: 2023-05-15T00:00:00
+2025-10-22 09:57:05 INFO Selecting fields 188 ['2023-05-14T18:00:00', '2023-05-15T00:00:00']
+/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/metadata.py:439: UserWarning: 🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata
+  warnings.warn("🚧  TEMPORARY CODE 🚧: Use the remapping in the metadata")
+2025-10-22 09:57:05 INFO GribFileInput: using `latitudes` and `longitudes` from the first input field
+2025-10-22 09:57:07 INFO Computed constant forcings: before ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'], after ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']
+2025-10-22 09:57:07 INFO Constant computed forcing: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:57:07 INFO Dynamic computed forcing: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:57:07 INFO --------------------------------------------------------------------------------
+2025-10-22 09:57:07 INFO Input state:
+2025-10-22 09:57:07 INFO   ['10u', '10v', '2d', '2t', 'lsm', 'msl', 'q_100', 'q_1000', 'q_150', 'q_200', 'q_250', 'q_300', 'q_400', 'q_50', 'q_500', 'q_600', 'q_700', 'q_850', 'q_925', 'sdor', 'skt', 'slor', 'sp', 'stl1', 'stl2', 't_100', 't_1000', 't_150', 't_200', 't_250', 't_300', 't_400', 't_50', 't_500', 't_600', 't_700', 't_850', 't_925', 'tcw', 'u_100', 'u_1000', 'u_150', 'u_200', 'u_250', 'u_300', 'u_400', 'u_50', 'u_500', 'u_600', 'u_700', 'u_850', 'u_925', 'v_100', 'v_1000', 'v_150', 'v_200', 'v_250', 'v_300', 'v_400', 'v_50', 'v_500', 'v_600', 'v_700', 'v_850', 'v_925', 'w_100', 'w_1000', 'w_150', 'w_200', 'w_250', 'w_300', 'w_400', 'w_50', 'w_500', 'w_600', 'w_700', 'w_850', 'w_925', 'z', 'z_100', 'z_1000', 'z_150', 'z_200', 'z_250', 'z_300', 'z_400', 'z_50', 'z_500', 'z_600', 'z_700', 'z_850', 'z_925']
+2025-10-22 09:57:07 INFO Constant forcings inputs:
+2025-10-22 09:57:07 INFO   ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:57:07 INFO Dynamic forcings inputs:
+2025-10-22 09:57:07 INFO   ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:57:07 INFO Boundary forcings inputs:
+2025-10-22 09:57:07 INFO --------------------------------------------------------------------------------
+2025-10-22 09:57:07 INFO --------------------------------------------------------------------------------
+2025-10-22 09:57:07 INFO Initial forcings:
+2025-10-22 09:57:07 INFO   Constant forcings inputs:
+2025-10-22 09:57:07 INFO     ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'])
+2025-10-22 09:57:07 INFO   Dynamic forcings inputs:
+2025-10-22 09:57:07 INFO     ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'])
+2025-10-22 09:57:07 INFO --------------------------------------------------------------------------------
+2025-10-22 09:57:07 INFO Constant forcings input: ComputedForcings(['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude']) ['cos_latitude', 'cos_longitude', 'sin_latitude', 'sin_longitude'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:57:07 INFO Dynamic forcings input: ComputedForcings(['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation']) ['cos_julian_day', 'cos_local_time', 'sin_julian_day', 'sin_local_time', 'insolation'] ([datetime.datetime(2023, 5, 14, 18, 0), datetime.datetime(2023, 5, 15, 0, 0)])
+2025-10-22 09:57:07 INFO Expected shape for each input fields: (2, 542080)
+2025-10-22 09:57:07 INFO Preparing input tensor with shape (2, 101, 542080)
+2025-10-22 09:57:10 INFO Loading Checkpoint(/perm/swe0632/PROJ_anemoi_oct2025/Model_cktpt/aifs-ens-crps-1.0.ckpt): 3 seconds.
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 452, in model
+    model = torch.load(self.checkpoint.path, map_location=self.device, weights_only=False).to(self.device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1360, in load
+    return _load(
+           ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1848, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/torch/serialization.py", line 1837, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by /perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/flash_attn_2_cuda.cpython-311-x86_64-linux-gnu.so)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/bin/anemoi-inference", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/__main__.py", line 38, in main
+    cli_main(__version__, __doc__, COMMANDS)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/utils/cli.py", line 266, in cli_main
+    cmd.run(args)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/commands/run.py", line 60, in run
+    runner.execute()
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runners/default.py", line 114, in execute
+    for state in self.run(input_state=input_state, lead_time=lead_time):
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 222, in run
+    yield from self.forecast(lead_time, input_tensor, input_state)
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 541, in forecast
+    self.model.eval()
+    ^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/functools.py", line 1001, in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/perm/swe0632/conda/envs/env_test_anemoi/lib/python3.11/site-packages/anemoi/inference/runner.py", line 458, in model
+    raise RuntimeError(error_msg) from e
+RuntimeError: Error loading model - Environment validation failed. The following issues were found:
+  mismatch:
+    Version of module anemoi.utils was lower in training than in inference: 0.4.22 <= 0.4.37
+srun: error: ac6-326: task 0: Exited with exit code 1
+srun: Terminating StepId=32581399.4
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-22T09:57:11 on ac
+[ECMWF-INFO -ecepilog] JobName                   : inference-dana_2_step_aifs_ens
+[ECMWF-INFO -ecepilog] JobID                     : 32581399
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-22T09:54:59
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-22T09:55:15
+[ECMWF-INFO -ecepilog] End                       : 2025-10-22T09:57:11
+[ECMWF-INFO -ecepilog] QueuedTime                : 16.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 116
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 1:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : sesmhi
+[ECMWF-INFO -ecepilog] QOS                       : ng
+[ECMWF-INFO -ecepilog] User                      : swe0632
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025/testRunner4.out
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025/testRunner4.out
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 32
+[ECMWF-INFO -ecepilog] SBU                       : 8.797
+[ECMWF-INFO -ecepilog] jobtag                    : swe0632-inference-_p_aifs_ens-1x32-/etc/ecmwf/nfs/dh2_perm_b/swe0632/PROJ_anemoi_oct2025/testRunner4.out
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+
