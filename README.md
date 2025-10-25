@@ -29,8 +29,11 @@ pip install anemoi-datasets==0.5.23
 pip install "earthkit-regrid==0.4.0" "ecmwf-opendata>=0.3.19"
 pip install flash_attn
 ```
-* The right cuda version needs to be installed during the process.
 
+* Some version correction may be needed:
+1. The right cuda version needs to be installed during the process.
+2. reverse the anemoi.utils version.
+> conda install anemoi.utils=0.4.22
 ---
 
 ## II. Test the Environment
