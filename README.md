@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 # HCLIM_ANEMOI
 Appication of ANEMOI for HCLIM
-=======
-# 🌐 Project: AIFS Ensemble Inference
 
-This document describes the setup and execution steps for running **AIFS ensemble inference** on the ATOS system.
+- # 🌐 AIFS Ensemble Inference
+
+- This document describes the setup and execution steps for running **AIFS ensemble inference** on the ATOS system.
 
 ---
 
@@ -34,10 +33,44 @@ pip install "earthkit-regrid==0.4.0" "ecmwf-opendata>=0.3.19"
 pip install flash_attn
 ```
 
+⚙️ Note 
 * Some version correction may be needed:
 1. The right cuda version needs to be installed during the process.
-2. reverse the anemoi.utils version.
-> conda install anemoi.utils=0.4.22
+   ```
+   $ ln -s /usr/local/apps/cuda/12.6/ /perm/smf/cuda_12.6
+   $ export CUDA_HOME=/perm/smf/cuda_12.6
+   ```
+3. reverse the anemoi.utils version.
+```
+  conda install anemoi.utils=0.4.22
+```
+
+* Conda Channels (for ECMWF Users)
+  The default Anaconda repository (https://repo.anaconda.com/) is blocked within the ECMWF network due to licensing restrictions.
+  To ensure compatibility, please configure Conda to use only the conda-forge channel.
+
+  You can verify and adjust your Conda channel configuration as follows:
+  ```
+  # Check current channels
+  conda config --show channels
+
+  # If "defaults" appears, remove it
+  conda config --remove channels defaults
+
+  # Verify the updated configuration
+  conda config --show channels
+  ```
+  Expected output:
+  ```
+  channels:
+    - conda-forge
+  ```
+
+  With this configuration, environments can be created exclusively from conda-forge.
+    - Conda-forge URL: https://conda.anaconda.org  
+    - (Blocked) Default Anaconda repository: https://repo.anaconda.com
+
+
 ---
 
 ## II. Test the Environment
@@ -97,6 +130,10 @@ sbatch slurm_aifs_ens_1000.sh
 - **Anemoi Inference Configuration Guide: top-level configuration**  
   [https://anemoi.readthedocs.io/projects/inference/en/latest/inference/configs/top-level.html](https://anemoi.readthedocs.io/projects/inference/en/latest/inference/configs/top-level.html)
 
+ - **https://huggingface.co/ecmwf/aifs-ens-1.0**
+   
+ - **https://anemoi.ecmwf.int/**
+
 ---
 
 ## 🤝 Acknowledgment
@@ -105,4 +142,3 @@ This GitHub repository is a collaborative effort of the **ML Working Group of th
 Most scripts and workflows were developed by **Toni (AEMET)**.
 
 ---
->>>>>>> source/main
