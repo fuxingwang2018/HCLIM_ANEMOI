@@ -30,7 +30,7 @@ pip install anemoi-models==0.6.0
 pip install anemoi-graphs==0.6.0
 pip install anemoi-datasets==0.5.23
 pip install "earthkit-regrid==0.4.0" "ecmwf-opendata>=0.3.19"
-pip install flash_attn
+pip install flash_attn==2.7.3
 ```
 
 ⚙️ Note 
